@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include"ex08a.h"
+
+void PrintfData1(Record);
+void PrintfData2(Record *);
+int main(){
+    //文字列には"""をつけることを忘れずに！
+Record data[2]={{1260242,"Ryusei",80,3.0},
+                {1260999,"unknown",100,4.0}};
+Record *m1,*m2;
+m1=&data[1];
+m2=&data[2];
+printf("値渡し\n");
+PrintfData1(data[1]);
+PrintfData1(data[2]);
+printf("ポインタ（アドレス）渡し\n");
+PrintfData2(m1);
+PrintfData2(m2);
+    return 0;
+}
+
+void PrintfData1(Record sdata){
+printf("%d\n%s\n%d\n%lf\n",sdata.id,sdata.name,sdata.score,sdata.gpa);
+}
+
+void PrintfData2(Record *addata){
+printf("%d\n%s\n%d\n%lf\n",addata->id,(*addata).name,addata->score,addata->gpa);
+}

@@ -1,0 +1,6 @@
+typedef struct{
+  vec1[2];
+  vec2[2];
+  vec3[2];
+}vector
+	     

@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int checkString(char *);
+
+int main()
+{
+  int i;
+  char newsstring[6][15]={"Good News", "Bad News", "Happy News", 
+              "Sweet News", "Scary News", "Wonderful News"};
+
+  for(i = 0; i < 6; i++) {
+    /* If a string contains the patterns "Bad" or "Scary", 
+       replace it with the new string "Cool News". */
+   /* ここを作成する */
+    checkString(&newsstring[i][15]);
+
+
+  }
+  
+  /* Print out the result */
+  printf("--\n");
+  for(i = 0; i < 6; i++) printf("%2d %s\n",i ,newsstring[i]);
+  printf("--\n");
+  
+  return 0;
+}
+
+/* Check whether a string contains the patterns "Bad" or "Scary" 
+   at the first n characters using strncmp function */
+/* Refer to the command "man strcmp" for the strncmp function. */
+int checkString(char *str)
+{
+   /* ここを作成する */  
+  int i;
+  for(i=0;i<6;i++){
+    if(strcmp("Bad News",str[i])==0)strcpy(str[i],"Cool News");
+    if(strcmp("Scary News",str[i])==0)strcpy(str[i],"Cool News");
+  }
+}

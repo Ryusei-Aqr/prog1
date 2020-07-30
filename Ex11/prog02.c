@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <math.h>
+
+typedef struct {
+  double  x; /* x座標 */
+  double  y; /* y座標 */
+} Point;
+
+Point rotate_1(double, Point, Point);
+void  rotate_2(double, Point, Point *);
+Point rotate_3(double,Point *);
+void rotate_4(double,Point *);
+
+int main()
+{
+  double rad, deg;
+  Point pc = {2.0, 3.0}, p = {4.0, 6.0}, p1,p2,p3,p4[3];
+  Point p3c[2],p4c[3];
+
+  printf("回転角度[度]をいれて下さい\n");
+  scanf("%lf", &deg);
+  rad=deg*M_PI/180;
+  printf("Theta %f [deg](%f [rad])\n",deg,rad);
+  printf("pc: %f %f\n",pc.x,pc.y);
+  printf("p : %f %f\n",p.x,p.y);
+  
+/*
+ * ここに関数呼び出し及び関連するコードを書く
+ */
+  /*
+  p1=rotate_1(rad,pc,p);
+  rotate_2(rad,pc,&p);
+  p2=p;
+  printf("rotate_1: %f %f\n",p1.x,p1.y);
+  printf("rotate_2: %f %f\n",p2.x,p2.y);
+  */
+  p3c[0]=pc;
+  p3c[1]=p;
+  p3=rotate_3(rad,&p3c[0]);
+  printf("rotate_3: %f %f\n",p3.x,p3.y);
+
+  p4c[0]=pc;
+  p4c[1]=p;
+  rotate_4(rad,&p4c[0]);
+  p4[2]=p4c[2];//配列の代入がはできる
+  printf("rotate_4: %f %f\n",p4[2].x,p4[2].y);
+  return 0;
+}
+
+/*
+Point rotate_1(double rad, Point center, Point p)
+{
+
+
+  Point temp;
+
+  temp.x = (p.x-center.x) * cos(rad) + (p.y-center.y) * (-sin(rad))+center.x;
+  temp.y = (p.x-center.x) * sin(rad) + (p.y-center.y) * cos(rad)+center.y;
+  
+  return temp;
+}
+
+void rotate_2(double rad, Point center, Point *p)
+{
+
+  Point temp;
+  temp=*p;
+  
+  p->x = (temp.x-center.x) * cos(rad) + (temp.y-center.y) * (-sin(rad))+center.x;
+  p->y = (temp.x-center.x) * sin(rad) + (temp.y-center.y) * cos(rad)+center.y;
+}
+*/
+
+Point rotate_3(double rad,Point *coo){
+
+  Point temp;
+
+  temp.x = (coo[1].x-coo[0].x) * cos(rad) + (coo[1].y-coo[0].y) * (-sin(rad))+coo[0].x;
+  temp.y = (coo[1].x-coo[0].x) * sin(rad) + (coo[1].y-coo[0].y) * cos(rad)+coo[0].y;
+
+  return temp;
+}
+
+void rotate_4(double rad,Point *coo){
+//cooが仮引数として数値を受け取っているので最期に代入してあげる必要がある
+    Point temp[3];
+
+    temp[2].x=(coo[1].x-coo[0].x) * cos(rad) + (coo[1].y-coo[0].y) * (-sin(rad))+coo[0].x;
+    temp[2].y= (coo[1].x-coo[0].x) * sin(rad) + (coo[1].y-coo[0].y) * cos(rad)+coo[0].y;
+     
+    coo[2]=temp[2];
+}

@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BLACK '1'
+#define WHITE '0'
+
+char **pbm_alloc(int, int);
+void   pbm_free(char **,int, int);
+char **pbm_read(int *, int *);
+void   pbm_write(char **, int, int);

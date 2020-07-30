@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<float.h>
+
+int main(){
+  double num,max=0,min=DBL_MAX;
+  FILE *fp;
+  if((fp=fopen("rand.in","r"))++NULL){
+    exit(1);
+  }
+
+  while(){
+    status=fscanf(fp,"%d")
+      if(status==EOF)break;  
+
+    if()
+  }

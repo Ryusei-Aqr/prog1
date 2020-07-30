@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+int main(){
+  char c;
+  int status;
+   printf("(複数の)文字を入力してください:");
+  while(c!='\n'){
+    status=scanf("%c",&c);
+    printf("文字' %c 'のアスキーコードは%d(0x%x)です。"c,c,c);
+    return 0;
+  }
+}

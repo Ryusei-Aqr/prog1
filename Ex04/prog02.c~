@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+  int x=3, y=7; /* この行は変更しない */
+  int *p,*q;
+p=&x;
+q=&y;
+  /* 以下の printf() の中を x,y を使わない形に書き換える */
+  printf(" Value x: %d  (%p)\n", *p, &p );
+  printf(" Value y: %d  (%p)\n", *q, &q );
+  //変数名がp、qのアドレスにポインタp、qの内容が入っているのでそれを表示するために＊をつける
+  printf(" Sum:     %d\n", (*p)+(*q) );
+  printf(" Product: %d\n", (*p)*(*q) );
+  //同様にポインタ変数を使うために＊をつける
+  return 0;
+}
+
+/*実行結果
+ Value x: 3  (0x7ffee104eac8)
+ Value y: 7  (0x7ffee104eac4)
+ Sum:     10
+ Product: 21
+*/

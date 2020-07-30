@@ -1,0 +1,12 @@
+a set s of strings is p-reducible (p for polynomial) to a set t of strings
+iff there is some query machine m and a polynomial q(n) such that for each input string w,
+the t-computation of m with input w halts within q(|w|) steps (|w| is the length of w)
+and ends in an accepting state iff w in s.
+A SET S OF STRINGS IS P-REDUCIBLE (P FOR POLYNOMIAL) TO A SET T OF STRINGS
+IFF THERE IS SOME QUERY MACHINE M AND A POLYNOMIAL Q(N) SUCH THAT FOR EACH INPUT STRING W,
+THE T-COMPUTATION OF M WITH INPUT W HALTS WITHIN Q(|W|) STEPS (|W| IS THE LENGTH OF W)
+AND ENDS IN AN ACCEPTING STATE IFF W IN S.
+a SET s OF STRINGS IS p-REDUCIBLE (p FOR POLYNOMIAL) TO A SET t OF STRINGS
+IFF THERE IS SOME QUERY MACHINE m AND A POLYNOMIAL q(N) SUCH THAT FOR EACH INPUT STRING W,
+THE t-COMPUTATION OF m WITH INPUT W HALTS WITHIN q(|W|) STEPS (|W| IS THE LENGTH OF W)
+AND ENDS IN AN ACCEPTING STATE IFF W IN s.

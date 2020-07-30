@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define N 1000
+
+int main(){
+  char c[N];
+  FILE *fpin,*fpout;
+  char c;
+  fpin=fopen("data.in","r");//読み込んで格納する
+
+  if(fpin==NULL){
+    printf("read file open error\n");
+    exit(1);
+  }
+
+  fpout=fopen("data01.out","w");//大文字を小文字にして出力、全てを大文字にして出力、小文字を大文字にし大文字に小文字にして出力する
+
+  if(fpout==NULL){
+    printf("write file open error\n");
+    fclose(fpin);
+    exit(2);
+  }
+
+  while(fscanf(fpin,"%c",&c)!=EOF){
+    fprintf(fpout,"%c",c);
+
+
+  }
+  fclose(fpout);
+  fclose(fpin);
+  return 0;
+}

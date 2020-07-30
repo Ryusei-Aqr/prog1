@@ -1,0 +1,11 @@
+単体テスト
+gcc -DDEBUG=1 main02.c
+gcc -DDEBUG=1 calc02.c
+または
+gcc -DDEBUG main02.c
+gcc -DDEBUG calc02.c
+
+結合テスト
+gcc -c main02.c
+gcc -c calc02.c
+gcc main02.o calc02.o

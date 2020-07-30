@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+double seqavg(double);
+int main(){
+  int kosu=0,data,status,kosu;
+  double average;
+  while(1){
+    printf("データを入力してください：");
+    status=scanf("%d",&data);
+    if(status!=1)break;
+    average=seqavg(num);
+    kosu++;
+    printf("データの個数＝%d, ここまでの平均＝%f",kosu,ave);
+  }
+  printf("最終的な平均値は%fです。");
+  return 0;
+}
+
+double seqavg(double data){
+  static double ave=0,kosu=0;//２周目以降は０にならない
+  kosu++;
+  ave=(ave*kosu+data)/kosu;
+  return ave;
+}
